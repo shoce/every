@@ -76,6 +76,8 @@ func main() {
 		if err != nil {
 			fmt.Fprintf(os.Stderr, NL+"err: %v"+NL, err)
 		}
+		os.Stdout.Sync()
+		os.Stderr.Sync()
 
 		fmt.Fprintf(os.Stderr, NL+"sleeping %v"+NL, Duration)
 		time.Sleep(Duration)
