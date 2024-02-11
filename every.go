@@ -80,6 +80,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, NL+"sleeping %v"+NL, Duration)
 		time.Sleep(Duration)
 
+		fmt.Fprintf(os.Stderr, "passed %v"+NL, time.Now().Sub(StartTime).Round(time.Second))
 		if StopAfter > 0 && time.Now().Sub(StartTime) > StopAfter {
 			fmt.Fprintf(os.Stderr, NL+"stopping after %v"+NL, StopAfter)
 			break
